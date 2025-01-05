@@ -1,4 +1,4 @@
-import database from "../../../../utils/database";
+import database from "utils/database";
 
 async function status(request, response) {
   const result = await database.query("select now() as time_now;");

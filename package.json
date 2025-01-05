@@ -4,7 +4,10 @@
   "description": "Repositório para escrever o código do https://www.tabnews.com.br para o https://curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker compose -f utils/compose.yaml up -d",
+    "services:stop": "docker compose -f utils/compose.yaml stop",
+    "services:down": "docker compose -f utils/compose.yaml down",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
